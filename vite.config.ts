@@ -10,7 +10,14 @@ export default defineConfig({
   },
   build: {
     commonjsOptions: {
-      include: [/@react-pdf\/renderer/],
+      include: [/@react-pdf\/renderer/, /node_modules/],
+      transformMixedEsModules: true
     },
   },
+  resolve: {
+    alias: {
+      'react': 'react',
+      'react-dom': 'react-dom'
+    }
+  }
 });
