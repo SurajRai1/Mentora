@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .markdown-content {
+    @apply prose max-w-none;
+  }
+
+  .markdown-content code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+  }
+
+  .dark .markdown-content code {
+    @apply bg-gray-800 text-gray-100;
+  }
+
+  .markdown-content pre {
+    @apply bg-gray-800 text-gray-100 rounded-lg p-4;
+  }
+
+  .markdown-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .markdown-content img {
+    @apply rounded-lg;
+  }
+
+  .markdown-content blockquote {
+    @apply border-l-4 border-purple-500 pl-4 italic;
+  }
+
+  .prose :where(code):not(:where([class~="not-prose"] *)) {
+    @apply text-purple-600 bg-purple-50 px-1 py-0.5 rounded;
+  }
+
+  .prose :where(pre):not(:where([class~="not-prose"] *)) {
+    @apply bg-gray-900 text-gray-100 rounded-lg overflow-x-auto;
+  }
+
+  .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+    @apply border-l-4 border-purple-300 pl-4 italic;
+  }
+
+  .prose :where(a):not(:where([class~="not-prose"] *)) {
+    @apply text-purple-600 hover:text-purple-700 no-underline;
+  }
+}
