@@ -51,7 +51,7 @@ export const generateQuiz = async (subject: string, gradeLevel: string): Promise
 
       const timestamp = new Date().toISOString();
       const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
